@@ -17,5 +17,9 @@ function sortearNumero() {
     const numeroSorteado = Math.floor(Math.random() * (max - min + 1)) + min;
 
     // Exibir o resultado
-    alert(`Número sorteado: ${numeroSorteado}`);
+    if ( input1 >= input2) {
+        alert ('O valor mínimo tem que ser MENOR que o valor máximo')
+    } else {
+        alert(`Número sorteado: ${numeroSorteado}`);
+    }
 }
