@@ -8,43 +8,60 @@
 
 body {
     background-color: #66CC99;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .logo {
-    width: 543px;
-    height: 354px;
+    max-width: 100%;
+    height: auto;
     display: block;
     margin: 20px auto;
+    width: min(100%, 543px);
+    height: auto;
 }
+
 main {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-weight: 400;
-    font-size: 32px;
     color: #FFFFFF;
-    margin: 20px auto 40px;
+    margin: 20px auto;
+    width: 100%;
 }
 
 p {
-    margin: 20px auto;
+    margin: 15px auto;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
 }
 
 input {
-    width: 242px;
+    width: 100%;
+    max-width: 242px;
     height: 40px;
     border-radius: 10px;
     background-color: #696969;
     color: #FFFFFF;
     font-weight: 500;
-    font-size: 20px;
+    font-size: clamp(1rem, 4vw, 1.25rem);
     border: 1px solid #BBBBBB;
-    padding-left: 12px;
+    padding: 0 12px;
+    margin: 0 auto;
 }
 
 .first-input {
-    margin-right: 22px;
+    margin-right: 0;
 }
 
 input:focus::placeholder {
@@ -53,7 +70,7 @@ input:focus::placeholder {
 
 ::placeholder {
     font-weight: 500;
-    font-size: 20px;
+    font-size: clamp(1rem, 4vw, 1.25rem);
     color: #FFFFFF;
     opacity: 70%;
 }
@@ -65,15 +82,16 @@ button {
     justify-content: center;
     text-align: center;
     font-weight: 700;
-    font-size: 20px;
     color: #FFFFFF;
-    margin: 20px auto 40px;
-    width: 242px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 242px;
     height: 40px;
     border-radius: 10px;
     border: none;
     background-color: #AE134B;
     cursor: pointer;
+    font-size: clamp(1rem, 4vw, 1.25rem);
 }
 
 button:hover{
@@ -88,30 +106,18 @@ button:active {
     transition: all 0.1s;
 }
 
-#toast {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .toast-visible {
-    opacity: 1;
-  }
-  
-  /* Cores para diferentes tipos */
-  .toast-error {
-    background-color: #BB002A;
-  }
-  
-  .toast-success {
-    background-color: #01C929;
-  }
+/* Media Queries para ajustes específicos */
+@media (min-width: 600px) {
+    .input-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .first-input {
+        margin-right: 22px;
+    }
+    
+    p {
+        margin: 20px auto;
+    }
+}
