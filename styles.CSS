@@ -106,7 +106,6 @@ button:active {
     transition: all 0.1s;
 }
 
-/* Media Queries para ajustes específicos */
 @media (min-width: 600px) {
     .input-container {
         flex-direction: row;
